@@ -1,0 +1,27 @@
+CONFIGURANDO PROJETOS NEXT
+1 - Iniciar projeto next
+    comando: yarn create next-app .
+2 - Migrando manualmento o projeto next de javascrit para typescript
+
+2.1 - Crie o arquivo 'tsconfig.json'.
+
+2.2 - Instale os pacotes typescript
+    comando: yarn add -D typescript @types/react @types/node
+
+3 - Configure o '.editorconfig'
+
+4 - Configurando o eslint
+    comando: npx eslint --init
+      Selecionar:
+        > To check syntax and find problems
+        > JavaScript modules (import/export)
+        > React
+        > Yes
+        > Browser / Node (Tecle 'a' para selecionar as duas opções)
+        > Javascript
+        > Yes
+4.1 - Configure o arquivo '.eslintrc.js'
+
+5 - Configure o prettier
+
+

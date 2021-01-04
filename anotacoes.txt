@@ -24,4 +24,16 @@ CONFIGURANDO PROJETOS NEXT
 
 5 - Configure o prettier
 
+Roteamento NEXT.JS
 
+Todos os arquivo dentro da pasta pages são considerados rotas automáticamente, mas é necessário alguns cuidados, para que o arquivo seja considerado uma rota é necessário exportar de dentro do arquivo como 'default' um componente 'jsx/tsx'.
+
+A rota principal '/' é o 'index' dentro da pasta pages. Os demais arquivos são '/' e o nome do arquivo, por exemplo, temos um arquivo dentro da pasta pages chamado 'sobre.tsx', para acessar este arquivo no browser digite 'hostname/sobre', hostname é o endereço, podendo ser localhost, etc.
+
+Podemos complementar um rota com um caminho especifico colocando o arquivo dentro de um diretório, exemplo: usuarios/perfil.tsx -> 'hostname/usuarios/perfil'. Podemos criar uma rota index para o diretório usuarios, exemplo: usuarios/index.tsx -> 'hostname/usuarios'.
+
+Caso seja necessário seja necessário excluir um arquivo do roteamente basta renomear o arquivo com um underline '_' no início.
+
+Outro ponto que devemos ficar atentos é ao tentar ocultar rotas com underline '_', pois isso funciona para algumas rotas, exemplo: usuarios/_oculta.tsx -> 'hostname/usuarios/_oculta', nós conseguiremos acessar a rota oculta. Isso se deve pois rotas invisiveis acrescentam complexidade aonde não se deve ter, o ideal é deixar o que tem dentro de pages apenas destinado a rotas, e acrescentar apenas o que é essencial.
+
+Rotas dinâmicas podem ser criadas nomeando arquivos com colchetes '[]' dentro da pasta pages, por exemplo, quando sejamos receber o nome de um usuário através da rota, fazemos: usuarios/[username].tsx -> 'hostname/usuarios/lucian'.

@@ -31,6 +31,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
+  if (context.params === undefined || context.params.slug === undefined)
+    return { props: {} };
   const posts = await getPost(context.params.slug); // É necessário fazer typeguard para corrigir o erro
   return {
     props: { post: posts[0] },

@@ -20,7 +20,6 @@ export default function HomePage({ posts }: HomePageProps) {
       </Head>
       <Header />
       <MainContainer>
-        <div>Bradcrump</div>
         <Container>
           {posts?.map((post) => (
             <PostCard

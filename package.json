@@ -33,5 +33,17 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.2.1",
     "typescript": "^4.1.3"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": ".babelrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucianBinner/blog-next.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucianBinner/blog-next/issues"
+  },
+  "homepage": "https://github.com/LucianBinner/blog-next#readme"
 }

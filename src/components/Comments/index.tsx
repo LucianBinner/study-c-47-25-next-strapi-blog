@@ -8,6 +8,7 @@ export type CommentsProps = {
 };
 
 export const Comments = ({ slug, title }: CommentsProps) => {
+  console.log(SITE_URL);
   return (
     <Container>
       <DiscussionEmbed

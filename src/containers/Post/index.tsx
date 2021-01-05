@@ -30,7 +30,7 @@ export const Post = ({ post }: PostProps) => {
       <Header />
       <MainContainer>
         <Heading>{post.title}</Heading>
-        <PostCover coverUrl={post.cover.formats.large.url} alt={post.title} />
+        <PostCover coverUrl={post.cover.url} alt={post.title} />
         <PostDetails
           author={post.author.name}
           category={post.category.name}

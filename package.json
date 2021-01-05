@@ -10,6 +10,7 @@
     "postbuild": "next-on-netlify"
   },
   "dependencies": {
+    "critters": "0.0.6",
     "disqus-react": "^1.0.10",
     "next": "10.0.4",
     "next-on-netlify": "^2.7.0",

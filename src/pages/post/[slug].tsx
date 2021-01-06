@@ -48,6 +48,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const posts = await getPost(context.params.slug); // É necessário fazer typeguard para corrigir o erro
   return {
     props: { post: posts[0] },
-    revalidate: 10,
+    revalidate: 300,
   };
 };

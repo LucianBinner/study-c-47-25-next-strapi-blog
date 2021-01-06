@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+import Error from 'next/error';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { Post } from '../../containers/Post';
 import countAllPosts from '../../data/posts/count-all-posts';
@@ -10,6 +12,16 @@ export type DynamicPostProps = {
 };
 
 const DynamicPost = ({ post }: DynamicPostProps) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <div>Páginas ainda carregando, por favor aguarde.</div>;
+  }
+
+  if (!post) {
+    return <Error statusCode={404} />;
+  }
+
   return <Post post={post} />;
 };
 
@@ -26,7 +38,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         },
       };
     }),
-    fallback: false,
+    fallback: true, // false - Envia para 404 caso a página não exista
   };
 };
 
@@ -36,5 +48,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const posts = await getPost(context.params.slug); // É necessário fazer typeguard para corrigir o erro
   return {
     props: { post: posts[0] },
+    revalidate: 5,
   };
 };

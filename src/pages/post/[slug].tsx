@@ -18,7 +18,7 @@ const DynamicPost = ({ post }: DynamicPostProps) => {
     return <div>Páginas ainda carregando, por favor aguarde.</div>;
   }
 
-  if (!post) {
+  if (!post?.title) {
     return <Error statusCode={404} />;
   }
 
@@ -46,8 +46,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
   if (context.params === undefined || context.params.slug === undefined)
     return { props: {} };
   const posts = await getPost(context.params.slug); // É necessário fazer typeguard para corrigir o erro
+  const post = posts.length > 0 ? posts[0] : {};
   return {
-    props: { post: posts[0] },
-    revalidate: 300,
+    props: { post },
+    revalidate: 10,
   };
 };

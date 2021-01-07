@@ -12,9 +12,9 @@ export default function Home({ posts }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllPosts('_sort=id:desc&_start=0&_limit=10');
+  const posts = await getAllPosts('_sort=id:desc&_start=0&_limit=6');
   return {
     props: { posts },
-    revalidate: 300, // Revalida a página a cada 60 segundos
+    revalidate: 10, // Revalida a página a cada 60 segundos
   };
 };

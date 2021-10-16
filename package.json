@@ -14,7 +14,7 @@
   "dependencies": {
     "critters": "0.0.6",
     "disqus-react": "^1.0.10",
-    "next": "10.0.4",
+    "next": "^11.1.2",
     "next-on-netlify": "^2.7.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
